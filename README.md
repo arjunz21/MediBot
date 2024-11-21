@@ -1,8 +1,8 @@
-# EMART
-EMART AI-ML Project
+# MediBOT
+MediBOT LLM Based Project
 
 ## Description
-A EMart Sales Machine Learning project End to End with FASTApi, Docker, Plotly and Streamlit
+A MediBOT is a chatbot built based on NLP, LLM, Transformers, LangChain & OpenAI
 
 ## Getting Started
 ### Dependencies
