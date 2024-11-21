@@ -1,0 +1,39 @@
+numpy
+pandas
+pypdf
+datasets
+matplotlib
+seaborn
+nltk
+spacy
+accelerate
+tenacity
+chromadb
+langchain
+langchain_community
+langchain_chroma
+Together
+langchain_together
+transformers
+duckduckgo-search
+# plotly
+# streamlit
+# requests
+# sqlalchemy
+# pytest
+# pytest-html
+# pytest-xdist
+# allure-pytest
+# mysql
+# pymysql
+# mysql-connector-python
+# openai
+# scipy
+# scikit-learn
+fastapi[standard]
+pydantic
+uvicorn
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+#-e .
