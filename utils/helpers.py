@@ -10,7 +10,9 @@ from utils import logging
 config = configparser.RawConfigParser()
 config.read(os.path.join('resources', 'config.ini'))
 
+
 class Helpers:
+    basePath = os.getcwd()
 
     @staticmethod
     def symtonsList(grp):
@@ -30,7 +32,7 @@ class Helpers:
     @staticmethod
     def save_object(filePath, obj):
         try:
-            logging.info("Saving the object")
+            logging.info(f"Saving Object: {filePath}")
             dirPath = os.path.dirname(filePath)
             os.makedirs(dirPath, exist_ok=True)
             with open(filePath, "wb") as fileObj:

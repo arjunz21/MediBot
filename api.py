@@ -29,3 +29,12 @@ from os import environ as env
 @app.get("/", status_code=status.HTTP_200_OK)
 async def index():
     return {"result": f"hello var env['MY_VAR']"}
+
+
+@app.get("/test", status_code=status.HTTP_200_OK)
+async def index():
+    di = DataIngestion()
+    di.start()
+    di.info()
+    di.visual()
+    return {"result": "hello test"}
