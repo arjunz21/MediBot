@@ -20,7 +20,7 @@ app.add_middleware(CORSMiddleware,
                    'http://objective-violet-87944.pktriot.net:22010', ],
     allow_credentials=True, allow_methods=['*'], allow_headers=['*'])
 
-from mediapi.components import DataIngestion, DataTransformation
+from mediapi.components import DataIngestion, DataTransformation, ModelRecommender
 # from mediapi.components.price_model import PriceModel
 from mediapi.routes import recomm_router
 from os import environ as env
@@ -34,7 +34,12 @@ async def index():
 @app.get("/test", status_code=status.HTTP_200_OK)
 async def index():
     di = DataIngestion()
-    di.start()
+    trdfPath, progsPath, *_ = di.start()
     di.info()
-    di.visual()
+    di.visuals()
+    dt = DataTransformation(trdfPath, progsPath)
+    X_tr, y_tr, X_te, y_te = dt.start()
+    mrec = ModelRecommender(X_tr, y_tr, X_te, y_te)
+    mrec.start()
+    mrec.predict()
     return {"result": "hello test"}

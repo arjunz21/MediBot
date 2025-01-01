@@ -2,7 +2,6 @@ import os
 # import sys
 import pandas as pd
 from dataclasses import dataclass
-from sklearn.model_selection import train_test_split
 
 from utils import logging
 from utils.helpers import Helpers
@@ -64,7 +63,7 @@ class DataIngestion:
         except Exception as e:
             logging.error("Error in DataIngestion:" + str(e))
 
-        return self.dataIngestionConfig.trainPath, self.dataIngestionConfig.symsPath, self.dataIngestionConfig.severityPath, self.dataIngestionConfig.progsPath, self.dataIngestionConfig.symtnPath
+        return self.dataIngestionConfig.trainPath, self.dataIngestionConfig.progsPath, self.dataIngestionConfig.symsPath, self.dataIngestionConfig.symtnPath, self.dataIngestionConfig.severityPath
     
     def info(self):
         logging.info("Checking Information about Dataset")
@@ -75,6 +74,6 @@ class DataIngestion:
         print(self.sym_trdf.describe().T)
         print(self.sym_trdf.head())
 
-    def visual(self):
+    def visuals(self):
         logging.info("Visualizing the Data and storing into images.")
         # wordCloudBar(sym_trdf['prognosis'])
