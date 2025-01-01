@@ -39,7 +39,7 @@ async def index():
     di.visuals()
     dt = DataTransformation(trdfPath, progsPath)
     X_tr, y_tr, X_te, y_te = dt.start()
-    mrec = ModelRecommender(X_tr, y_tr, X_te, y_te)
+    mrec = ModelRecommender(X_tr, y_tr, X_te, y_te, progsPath)
     mrec.start()
     mrec.predict()
     return {"result": "hello test"}
